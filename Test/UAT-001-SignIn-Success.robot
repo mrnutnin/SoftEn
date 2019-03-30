@@ -8,22 +8,20 @@ ${INDEX URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/
 ${LOGIN URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/Models/Login.php
 ${HOME URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/Views/studentinclasslist.php
 ${VALID LECTURER USERNAME}    lecturer
-${VALID LECTURER PASSWORD}    lecturer
-${VALID TA USERNAME}    ta
-${VALID TA PASSWORD}    ta
+${VALID LECTURER PASSWORD}    ABCdef123
+${VALID TA USERNAME}    student_ta@kkumail.com
+${VALID TA PASSWORD}    ABCdef123
 ${INVALID LECTURER USERNAME}    lec
-${INVALID LECTURER PASSWORD}    lec
-${INVALID TA USERNAME}    t
-${INVALID TA PASSWORD}    t
-${ERROR INPUT MESSAGE}    โปรดกรอกฟิลด์นี้
-${ERROR LOGIN MESSAGE}    Login Fail!
+${INVALID LECTURER PASSWORD}    ABCdef
+${INVALID TA USERNAME}    student_ta@kku
+${INVALID TA PASSWORD}    ABCdef
 ${HOME TITLE}    Class List
 ${TA LOGIN SUCCESS MESSAGE}    Hello " TA " Welcome Back !
 ${LECTURER LOGIN SUCCESS MESSAGE}    Hello " lecturer " Welcome Back !
 ${DELAY}    0.4
 
 *** Test Cases ***
-Lecturer Sign in Success
+ํT01 Lecturer Sign in Success
   Open Browser    ${INDEX URL}    ${BROWSER}
   Set Selenium Speed     ${DELAY}
   Location Should Be    ${INDEX URL}
@@ -35,7 +33,7 @@ Lecturer Sign in Success
    Wait Until Page Contains    ${LECTURER LOGIN SUCCESS MESSAGE}
   [Teardown]    Close Browser
   
-TA Sign in Success
+T02 TA Sign in Success
   Open Browser    ${INDEX URL}    ${BROWSER}
   Set Selenium Speed     ${DELAY}
   Location Should Be    ${INDEX URL}

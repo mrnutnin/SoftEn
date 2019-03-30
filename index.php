@@ -27,7 +27,7 @@
   <div id="formContent">
     <!-- Login Form -->
     <h1>Sign In</h1>
-    <form method="POST" action="" name="myform" onsubmit="return validation();">
+    <form method="POST" action="Models/Login.php" name="myform" onsubmit="return validation();">
       <input  name="username" placeholder="username"  type="text" id="username">
       <input  name="password" placeholder="password"  type="password" id="password">
       <input type="submit"value="Sign In" name="signin">
