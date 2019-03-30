@@ -30,13 +30,8 @@
 			<div id="demo">
 			<h2>Class List</h2><br>
 			<p>Hello " <?=$_SESSION["ses_name"] ?> " Welcome Back !  </p><br>
-		
-
-						
+							
 				<?php include "../Models/CallStudentInClassListFormDB.php"?>
-			
-
-
 						
 			</center>
 			</div>

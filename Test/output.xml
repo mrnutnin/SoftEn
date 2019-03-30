@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190330 10:28:37.180" generator="Robot 3.0.4 (Python 2.7.16 on win32)">
+<suite source="C:\xampp\htdocs\SoftEn\Test\UAT-SignIn-Fail-002.robot" id="s1" name="UAT-SignIn-Fail-002">
+<test id="s1-t1" name="Open Index Page :">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190330 10:28:37.680" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190330 10:28:40.781" starttime="20190330 10:28:37.680"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20190330 10:28:40.783" starttime="20190330 10:28:40.782"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190330 10:28:42.472" starttime="20190330 10:28:40.785"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190330 10:28:42.879" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190330 10:28:42.879" starttime="20190330 10:28:42.473"></status>
+</kw>
+<status status="PASS" endtime="20190330 10:28:42.880" critical="yes" starttime="20190330 10:28:37.679"></status>
+</test>
+<test id="s1-t2" name="Lecturer Sign In Empty username :">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${VALID LECTURER PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190330 10:28:42.884" level="INFO">Typing text 'lecturer' into text field 'password'.</msg>
+<status status="PASS" endtime="20190330 10:28:44.193" starttime="20190330 10:28:42.883"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190330 10:28:44.194" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190330 10:28:45.462" starttime="20190330 10:28:44.194"></status>
+</kw>
+<kw name="Location Should Contain" library="Selenium2Library">
+<doc>Verifies that current URL contains ``expected``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190330 10:28:45.870" level="INFO">Current location contains 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190330 10:28:45.870" starttime="20190330 10:28:45.462"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>//*[@id="formContent"]/form/input[1]</arg>
+<arg>${ERROR INPUT MESSAGE}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190330 10:28:51.724" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190330 10:28:51.724" starttime="20190330 10:28:51.009"></status>
+</kw>
+<msg timestamp="20190330 10:28:51.726" level="FAIL">Element '//*[@id="formContent"]/form/input[1]' did not get text 'Please fill out this field.' in 5 seconds.</msg>
+<status status="FAIL" endtime="20190330 10:28:51.726" starttime="20190330 10:28:45.871"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190330 10:28:54.309" starttime="20190330 10:28:51.727"></status>
+</kw>
+<status status="FAIL" endtime="20190330 10:28:54.310" critical="yes" starttime="20190330 10:28:42.882">Element '//*[@id="formContent"]/form/input[1]' did not get text 'Please fill out this field.' in 5 seconds.</status>
+</test>
+<status status="FAIL" endtime="20190330 10:28:54.313" starttime="20190330 10:28:37.183"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="UAT-SignIn-Fail-002" pass="1">UAT-SignIn-Fail-002</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

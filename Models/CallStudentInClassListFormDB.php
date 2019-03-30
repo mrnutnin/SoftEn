@@ -22,11 +22,11 @@
 						// echo $_SESSION["ses_status"]; 
 						// echo $name; 
 					 if($_SESSION["ses_type"]=='TA'){
-						$strSQL = "SELECT * FROM classroom WHERE memberId = '$ta' ";
+						$strSQL = "SELECT * FROM classrooms WHERE memberId = '$ta' ";
 						$result=$connect->query($strSQL);
 					 }
 					 if($_SESSION["ses_type"]=='lecturer'){
-						$strSQL = "SELECT * FROM classroom WHERE lecturer = '$name' OR '$ta' ";
+						$strSQL = "SELECT * FROM classrooms WHERE lecturer = '$name' OR '$ta' ";
 						$result=$connect->query($strSQL);
 					 }
 					 while($objResult=$result->fetch_assoc() ){

@@ -25,21 +25,14 @@ if (!empty($row)) {
     $_SESSION['ses_type'] = $row ['type'];
     $_SESSION['ses_memberId'] = $row ['memberId'];
 
-    // แสดง link เพื่อไปยังหน้าต่อไปหลังจากตรวจสอบสำเร็จแล้ว
-    // เข้าสู่ระบบสำเร็จ
-
-            echo '<h1 style="text-align: center; margin-top:20%; color: #009900" class="page-content page-content--centered">Login successful!</h1>';
-            echo '<p style="text-align: center;  class="page-content page-content--centered">Please wait...</p>'; 
-
-            echo '<Meta http-equiv="refresh" content="1;URL=../Views/studentinclasslist.php">';
-      
+    // เข้าสู่ระบบสำเร็จ 
+        header( "location: ../Views/studentinclasslist.php" );
+            exit(0);   
     // กรณี username และ password ไม่ตรงกัน
         } else {
-    // ไม่สำเร็จ ชื่อหรือรหัสผ่านไม่ถูกต้อง";
-            echo '<h1 style="text-align: center; margin-top:20%; color: #CC0000" class="page-content page-content--centered">Login fail!</h1>';
-            echo '<p style="text-align: center; class="page-content page-content--centered">Please waiting for login again... </p>'; 
-            echo '<Meta http-equiv="refresh" content="2;URL=../">';
-
+            echo "<script>";
+                    echo "alert(\"Invalid Username or Password!\");"; 
+                    echo "window.history.back()";
+            echo "</script>";
     }
-
 ?>
