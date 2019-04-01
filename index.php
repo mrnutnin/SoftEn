@@ -7,8 +7,7 @@
 	function validation(){ 
 		var username = document.myform.username.value;
 		var password = document.myform.password.value;
-		
-		if (username == "" && password == "") {
+    		if (username == "" && password == "") {
      	document.getElementById('errors').innerHTML="*Please enter your Username and Password!!";
      	return false;
  		} else if (username == "") {
@@ -17,10 +16,12 @@
 		} else if (password == "") {
       document.getElementById('errors').innerHTML="*Please enter your Password!!";
      	return false;
-    } 
+    }
 }		
 </script> 
+
 </head>
+
 
 <body>
 <div class="wrapper fadeInDown">
