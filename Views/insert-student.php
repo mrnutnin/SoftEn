@@ -1,10 +1,10 @@
 <?php
 include '../Controllers/Connect.php';
-include '../components/Header.php';
+include '../components/header.php';
 
 $classId = $_GET['cId'];
 
-$strSQL = "SELECT * FROM classroom WHERE cId = $classId";
+$strSQL = "SELECT * FROM classrooms WHERE cId = $classId";
 $result=$connect->query($strSQL);
 
 while($detailclass=$result->fetch_assoc() ){
