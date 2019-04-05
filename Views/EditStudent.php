@@ -1,6 +1,6 @@
 <?php
-include '../components/Header.php';
 include '../Controllers/Connect.php';
+include '../Components/Header.php';
 $classId = $_GET['cId'];
 $studentId = $_GET['sId'];
 $strSQL = "SELECT * FROM students WHERE cId = $classId AND sId = $studentId";
@@ -11,7 +11,7 @@ while($detail=$result->fetch_assoc() ){
 
 ?>
 <div class="jumbotron">
-  <form action="edit_student.php">
+  <form action="../Models/EditStudent2DB.php">
   <div class="form-group"><h3>แก้ไขนักศึกษา</h3><hr class="my-4"></div>
   <div class="form-group">
     <label for="exampleFormControlInput1">รหัสนักศึกษา</label>
@@ -31,3 +31,5 @@ while($detail=$result->fetch_assoc() ){
 <?php
 }
   ?>
+
+<?php include '../Components/Footer.php'; ?>

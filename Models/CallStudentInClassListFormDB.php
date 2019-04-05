@@ -42,7 +42,7 @@
 						<td style="text-align:center;background-color:#F8F8FF;color:#000000"><?=$objResult["year"];?></td>
 					 	<td style="text-align:center;background-color:#F8F8FF;color:#000000"><b><?=$objResult["term"];?></b></td>
 						
-						<td style="text-align:center;background-color:#F8F8FF;color:#000000" ><a href="insert-student.php?cId=<?=$objResult["cId"];?>">ดูข้อมูล</a></td>
+						<td style="text-align:center;background-color:#F8F8FF;color:#000000" ><a href="ClassDetail.php?cId=<?=$objResult["cId"];?>">ดูข้อมูล</a></td>
 						
 					  </tr>
 

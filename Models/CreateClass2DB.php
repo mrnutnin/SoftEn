@@ -1,6 +1,6 @@
 <?php include '../Controllers/Connect.php'; ?>
 <?php
-        $stmt = $pdo->prepare("INSERT INTO `classroom`(`cId`, `subjectCode`, `subjectName`, `detail`, `memberId`, `section`, `lecturer`, `year`, `term`) VALUES (null,?,?,?,?,?,?,?,?)");
+        $stmt = $pdo->prepare("INSERT INTO `classrooms`(`cId`, `subjectCode`, `subjectName`, `detail`, `memberId`, `section`, `lecturer`, `year`, `term`) VALUES (null,?,?,?,?,?,?,?,?)");
         $stmt->bindParam(1, $_GET["subjectCode"]);
 		$stmt->bindParam(2, $_GET["subjectName"]);
 		$stmt->bindParam(3, $_GET["detail"]);
@@ -14,3 +14,5 @@
 		
 	
 ?>
+
+<?php header('Location: ../Views/StudentInClassList.php');?>

@@ -3,7 +3,7 @@
 <div class="jumbotron">
 <h2>สร้างชั้นเรียน</h2><br>
 <hr class="my-4">
-<form action="CreatedClass.php" >
+<form action="../Models/CreateClass2DB.php" >
   <div class="form-group">
     <label for="exampleFormControlInput1">ชื่อวิชา</label>
      <input type="text" class="form-control" name="subjectName" id="subjectName" required>
@@ -21,8 +21,8 @@
     <label for="exampleFormControlSelect1">อาจารย์ผู้สอน</label>
   <select class="form-control" name="lecturer" id="lecturer">
   <?php
-include '../Controllers/Connect.php';
-$strSQL = 'SELECT * FROM member WHERE type ="lecturer" '  ;
+    include '../Controllers/Connect.php';
+    $strSQL = 'SELECT * FROM member WHERE type ="lecturer" '  ;
                         $result=$connect->query($strSQL);
 
                                     while($objResult=$result->fetch_assoc() ){

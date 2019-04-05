@@ -3,10 +3,6 @@
 
 // เชื่่อมต่อฐานข้อมูล
 include '../Controllers/Connect.php';
-//--->
-// $sId = $_GET['sId'];
-// $sName = $_GET['sName'];
-// $cId = $_GET['cId'];
 
 // // เพิ่มลงฐานข้อมูล
 // $sql_add = "insert into student set 
@@ -19,6 +15,6 @@ $stmt = $pdo->prepare("INSERT INTO `students`(`sId`, `sName`, `cId`) VALUES (?,?
 		$stmt->bindParam(3, $_GET["cId"]);
         $stmt->execute(); 
         $cId = $_GET["cId"];
-        header("location:insert-student.php?cId=$cId");
+        header("location:../Views/ClassDetail.php?cId=$cId");
 
 ?>

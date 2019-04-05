@@ -36,4 +36,4 @@
   </div>
 </div>
 
-<?php include 'Components/footer.php';?>
+<?php include 'Components/Footer.php';?>

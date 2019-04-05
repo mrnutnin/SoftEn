@@ -8,6 +8,6 @@ $stmt = $pdo->prepare("UPDATE `students` SET `sId`=?,`sName`=?WHERE `sId`=? AND 
 	$stmt->bindParam(4, $_GET["cId"]);
         $stmt->execute(); 
         $cId=$_GET["cId"];
-        header("location:insert-student.php?cId=$cId");
+        header("location:../Views/ClassDetail.php?cId=$cId");
 
 ?>

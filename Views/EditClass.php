@@ -1,6 +1,7 @@
 
-<?php include '../Components/Header.php';
+<?php 
 include '../Controllers/Connect.php';
+include '../Components/Header.php';
 ?>
 
 <?php
@@ -17,7 +18,7 @@ $strSQL = "SELECT * FROM classrooms WHERE cId  = $classId "  ;
 <div class="jumbotron">
 <h2>แก้ไขชั้นเรียน</h2><br>
 <hr class="my-4">
-<form action="edited-class.php" >
+<form action="../Models/EditClass2DB.php" >
   <div class="form-group">
     <label for="exampleFormControlInput1">ชื่อวิชา</label>
      <input type="text" class="form-control" name="subjectName" id="subjectName" value="<?php echo $obj["subjectName"];?>"required>
@@ -76,5 +77,7 @@ $strSQL = 'SELECT * FROM member WHERE type ="lecturer" '  ;
 					  ?>
   <button type="submit" class="btn btn-primary mb-2">ยืนยัน</button> 
 
-</form></div></div>
+</form>
+</div></div>
+
 <?php include '../Components/Footer.php';?>

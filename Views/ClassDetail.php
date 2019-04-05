@@ -1,6 +1,6 @@
 <?php
 include '../Controllers/Connect.php';
-include '../components/header.php';
+include '../components/Header.php';
 
 $classId = $_GET['cId'];
 
@@ -18,10 +18,10 @@ while($detailclass=$result->fetch_assoc() ){
     <div class="form-group col-md-10">
     <label for="exampleFormControlInput1" class="lead"><h3>ข้อมูลชั้นเรียน</h3> </label>
     </div>
-     <div class="form-row col-md-1"><form action="edit-class.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-success mb-2">แก้ไข</button></form><div class="form-group ">
+     <div class="form-row col-md-1"><form action="EditClass.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-success mb-2">แก้ไข</button></form><div class="form-group ">
     </div>
     </div>
-     <div class="form-row col-md-1"><form action="delete-class.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-danger mb-2">ลบ</button></form><div class="form-group ">
+     <div class="form-row col-md-1"><form action="../Models/DeleteClassFromDB.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-danger mb-2">ลบ</button></form><div class="form-group ">
     </div>
   </div>
   
@@ -58,7 +58,7 @@ while($detailclass=$result->fetch_assoc() ){
   ?>
 
 <div class="jumbotron">
-<form action="insert_student.php">
+<form action="../Models/InsertStudent2DB.php">
   <div class="form-group"><h3>เพิ่มนักศึกษา</h3></div>
   <hr class="my-4">
   <div class="form-group">
@@ -104,12 +104,12 @@ while($detailclass=$result->fetch_assoc() ){
 						<td style="text-align:center;background-color:#F8F8FF;color:#000000"><b><?=$count++?></b></td>
 						<td style="text-align:center;background-color:#F8F8FF;color:#000000"><b><?= $list_student["sId"];?></b></td>
             <td style="text-align:center;background-color:#F8F8FF;color:#000000"><?= $list_student["sName"];?></td>
-            <td style="background-color:#F8F8FF;color:#000000"><div class="form-row"><div class="form-group col-md-6" style="text-align:right;"><form action="edit-student.php">
+            <td style="background-color:#F8F8FF;color:#000000"><div class="form-row"><div class="form-group col-md-6" style="text-align:right;"><form action="EditStudent.php">
             <input type="hidden" name="cId" value="<?=$classId?>">
             <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
               <button type="submit" class="btn btn-success mb-2">แก้ไข</button></form></div>
               
-              <div class="form-group col-md-6" style="text-align:left"><form action="delete-student.php">
+              <div class="form-group col-md-6" style="text-align:left"><form action="../Models/DeleteStudentFromDB.php">
             <input type="hidden" name="cId" value="<?=$classId?>">
             <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
               <button type="submit" class="btn btn-danger mb-2" >ลบ</button></form></div></div></td>
@@ -121,3 +121,5 @@ while($detailclass=$result->fetch_assoc() ){
   }
   ?>
 </div></div>
+
+<?php include '../Components/Footer.php';?>
