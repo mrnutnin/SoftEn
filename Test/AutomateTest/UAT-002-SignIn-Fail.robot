@@ -25,7 +25,7 @@ ${ERROR LOGIN MESSAGE}    Invalid Username or Password!
 ${HOME MESSAGE}    Class List
 ${TA LOGIN SUCCESS MESSAGE}    Hello " TA " Welcome Back !
 ${LECTURER LOGIN SUCCESS MESSAGE}    Hello " lecturer " Welcome Back !
-${DELAY}    0.4
+${DELAY}    0.5
 
 *** Test Cases ***
 T01 Open Index Page
@@ -56,8 +56,8 @@ T04 Lecturer Sign In Empty Username And Password
   Wait Until Page Contains    ${EMPTY USER AND PASS MESSAGE}
 
 T05 Lecturer Sign In Invalid Username
-  Input Text    username    ${VALID LECTURER USERNAME}
-  Input Text    password    ${INVALID LECTURER PASSWORD}
+  Input Text    username    ${INVALID LECTURER USERNAME}
+  Input Text    password    ${VALID LECTURER PASSWORD}
   Click Button    signin
   Run Keyword And Expect Error
     ...    Alert with message '${ERROR LOGIN MESSAGE}' present.
@@ -65,8 +65,8 @@ T05 Lecturer Sign In Invalid Username
   Location Should Be    ${INDEX URL}
 
 T06 Lecturer Sign In Invalid Password
-  Input Text    username    ${INVALID LECTURER USERNAME}
-  Input Text    password    ${VALID LECTURER PASSWORD}
+  Input Text    username    ${VALID LECTURER USERNAME}
+  Input Text    password    ${INVALID LECTURER PASSWORD}
   Click Button    signin
   Run Keyword And Expect Error
     ...    Alert with message '${ERROR LOGIN MESSAGE}' present.
@@ -104,8 +104,8 @@ T10 TA Sign In Empty Username And Password
   Wait Until Page Contains    ${EMPTY USER AND PASS MESSAGE}
 
 T11 TA Sign In Invalid Username
-  Input Text    username    ${VALID TA USERNAME}
-  Input Text    password    ${INVALID TA PASSWORD}
+  Input Text    username    ${INVALID TA USERNAME}
+  Input Text    password    ${VALID TA PASSWORD}
   Click Button    signin
   Run Keyword And Expect Error
     ...    Alert with message '${ERROR LOGIN MESSAGE}' present.
@@ -113,8 +113,8 @@ T11 TA Sign In Invalid Username
   Location Should Be    ${INDEX URL}
 
 T12 TA Sign In Invalid Password
-  Input Text    username    ${INVALID TA USERNAME}
-  Input Text    password    ${VALID TA PASSWORD}
+  Input Text    username    ${VALID TA USERNAME}
+  Input Text    password    ${INVALID TA PASSWORD}
   Click Button    signin
   Run Keyword And Expect Error
     ...    Alert with message '${ERROR LOGIN MESSAGE}' present.

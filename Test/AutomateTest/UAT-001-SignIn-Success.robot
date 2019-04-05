@@ -18,7 +18,7 @@ ${INVALID TA PASSWORD}    ABCdef
 ${HOME TITLE}    Class List
 ${TA LOGIN SUCCESS MESSAGE}    Hello " TA " Welcome Back !
 ${LECTURER LOGIN SUCCESS MESSAGE}    Hello " lecturer " Welcome Back !
-${DELAY}    0.4
+${DELAY}    0.5
 
 *** Test Cases ***
 ํT01 Lecturer Sign in Success
