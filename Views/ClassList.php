@@ -28,7 +28,7 @@
 			<h2>Class List</h2><br>
 			<p>Hello " <?=$_SESSION["ses_name"] ?> " Welcome Back !  </p><br>
 							
-				<?php include "../Models/CallStudentInClassListFormDB.php"?>
+				<?php include "../Models/ClassListFromDB.php"?>
 						
 			</center>
 			</div>

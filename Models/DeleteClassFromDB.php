@@ -11,6 +11,6 @@ $stmt = $pdo->prepare("DELETE FROM `classrooms` WHERE `cId`=?");
 	    $stmt->bindParam(1, $_GET["cId"]);
         $stmt->execute(); 
         $cId=$_GET["cId"];
-        header("location:../Views/StudentInClassList.php");
+        header("location:../Views/ClassList.php");
 
 ?>

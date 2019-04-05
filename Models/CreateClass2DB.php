@@ -15,4 +15,4 @@
 	
 ?>
 
-<?php header('Location: ../Views/StudentInClassList.php');?>
+<?php header('Location: ../Views/ClassList.php');?>

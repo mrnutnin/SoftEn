@@ -26,7 +26,7 @@ if (!empty($row)) {
     $_SESSION['ses_memberId'] = $row ['memberId'];
 
     // เข้าสู่ระบบสำเร็จ 
-        header( "location: ../Views/studentinclasslist.php" );
+        header( "location: ../Views/ClassList.php" );
             exit(0);   
     // กรณี username และ password ไม่ตรงกัน
         } else {
