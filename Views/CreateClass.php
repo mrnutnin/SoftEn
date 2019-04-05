@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php include '../Components/Header.php';?>
 <div style="position:relative; padding-top:5%;padding-left:10%;padding-right:10%">
 <div class="jumbotron">

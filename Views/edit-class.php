@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <?php include '../Components/Header.php';
 include '../Controllers/Connect.php';
 ?>
@@ -6,7 +6,7 @@ include '../Controllers/Connect.php';
 <?php
 $memberId=$_SESSION['ses_memberId'];
 $classId = $_GET['cId'];
-$strSQL = "SELECT * FROM classroom WHERE cId  = $classId "  ;
+$strSQL = "SELECT * FROM classrooms WHERE cId  = $classId "  ;
                         $result=$connect->query($strSQL);
 
                                     while($obj=$result->fetch_assoc() ){

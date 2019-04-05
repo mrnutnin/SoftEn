@@ -6,6 +6,13 @@
 <link rel="stylesheet" type="text/css" href="../Components/popper.min.js">
 <link rel="stylesheet" type="text/css" href="../Components/bootstrap.min.js">
 <title>Checkin-Manager</title>
+<?php 
+session_start();
+if($_SESSION['ses_memberId'] == "")
+	{
+		header("location: ../");
+  }
+?>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

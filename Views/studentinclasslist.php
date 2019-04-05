@@ -1,5 +1,4 @@
 
-<?php session_start(); ?>
 <?php include '../Controllers/Connect.php'; ?>
 <?php include '../components/Header.php';?> 
 <html>
