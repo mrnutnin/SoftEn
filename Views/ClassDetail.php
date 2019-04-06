@@ -76,6 +76,17 @@ while($detailclass=$result->fetch_assoc() ){
   </form>
 </div>
 
+<form method="POST" action="../Models/excelUpload.php" enctype="multipart/form-data">
+<div class="form-group">
+<label>Upload Excel File</label>
+<input type="file" name="file" class="form-control">
+</div>
+<div class="form-group">
+<button type="submit" name="Submit" class="btn btn-success">Upload</button>
+</div>
+<p>Download Demo File from here : <a href="demo.ods">Demo.ods</a></p>
+</form>
+
  
 <div class="jumbotron">
   <div class="form-group">
