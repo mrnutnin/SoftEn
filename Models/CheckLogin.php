@@ -34,7 +34,7 @@ if (!empty($row)) {
     $username = $row["username"];
     if($row["flagLock"] == "Yes"){
        echo "<script>";
-       echo "alert(\"This Account is Lock! Wait 5 minute to try agian Or contact support\");"; 
+       echo "alert(\"*This account is Lock!, Please contact support.\");"; 
        echo "window.history.back()";
        echo "</script>";
        exit();   
@@ -51,7 +51,7 @@ if (!empty($row)) {
             $stmt->execute();
         }
         echo "<script>";
-        echo "alert(\"Invalid Username or Password!\");"; 
+        echo "alert(\"*Invalid Username or Password!\");"; 
         echo "window.history.back()";
         echo "</script>";
         exit();
@@ -73,7 +73,7 @@ if (!empty($row)) {
 }else{
     //Login Fail
     echo "<script>";
-    echo "alert(\"Invalid Username or Password!\");"; 
+    echo "alert(\"*Invalid Username or Password!\");"; 
     echo "window.history.back()";
     echo "</script>";
     exit();   

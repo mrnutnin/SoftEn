@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20190411 13:49:54.190" generator="Robot 3.0.4 (Python 2.7.16 on win32)">
+<suite source="c:\xampp\htdocs\SoftEn\Test\AutomateTest\UAT-002-SignIn-Fail.robot" id="s1" name="UAT-002-SignIn-Fail">
+<test id="s1-t1" name="T01 Open Index Page">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190411 13:49:54.420" level="INFO">Opening browser 'Chrome' to base url 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:49:57.740" starttime="20190411 13:49:54.420"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20190411 13:49:57.742" starttime="20190411 13:49:57.741"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190411 13:49:59.467" starttime="20190411 13:49:57.742"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:49:59.971" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:49:59.971" starttime="20190411 13:49:59.467"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:49:59.971" critical="yes" starttime="20190411 13:49:54.420"></status>
+</test>
+<test id="s1-t2" name="T02 Lecturer Sign In Empty Username">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:49:59.971" level="INFO">Typing text '' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:01.552" starttime="20190411 13:49:59.971"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${VALID LECTURER PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:01.553" level="INFO">Typing text 'ABCdef123' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:03.216" starttime="20190411 13:50:01.553"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:03.216" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:04.784" starttime="20190411 13:50:03.216"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY USERNAME MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:50:07.111" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:50:07.111" starttime="20190411 13:50:06.293"></status>
+</kw>
+<msg timestamp="20190411 13:50:07.111" level="FAIL">Alert with message '*Please enter your Username!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:50:07.111" starttime="20190411 13:50:04.785"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:07.111" starttime="20190411 13:50:04.785"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:07.642" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:50:07.642" starttime="20190411 13:50:07.111"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:07.642" critical="yes" starttime="20190411 13:49:59.971"></status>
+</test>
+<test id="s1-t3" name="T03 Lecturer Sign In Empty Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID LECTURER USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:07.642" level="INFO">Typing text 'chitsutha' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:09.265" starttime="20190411 13:50:07.642"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:09.267" level="INFO">Typing text '' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:10.844" starttime="20190411 13:50:09.265"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:10.844" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:12.399" starttime="20190411 13:50:10.844"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY PASSWORD MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:50:14.699" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:50:14.699" starttime="20190411 13:50:13.906"></status>
+</kw>
+<msg timestamp="20190411 13:50:14.700" level="FAIL">Alert with message '*Please enter your Password!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:50:14.700" starttime="20190411 13:50:12.400"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:14.700" starttime="20190411 13:50:12.400"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:15.210" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:50:15.210" starttime="20190411 13:50:14.701"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:15.210" critical="yes" starttime="20190411 13:50:07.642"></status>
+</test>
+<test id="s1-t4" name="T04 Lecturer Sign In Empty Username And Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:15.210" level="INFO">Typing text '' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:16.779" starttime="20190411 13:50:15.210"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:16.779" level="INFO">Typing text '' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:18.314" starttime="20190411 13:50:16.779"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:18.315" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:19.870" starttime="20190411 13:50:18.315"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY USER AND PASS MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:50:22.192" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:50:22.192" starttime="20190411 13:50:21.390"></status>
+</kw>
+<msg timestamp="20190411 13:50:22.192" level="FAIL">Alert with message '*Please enter your Username and Password!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:50:22.192" starttime="20190411 13:50:19.871"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:22.192" starttime="20190411 13:50:19.871"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:22.693" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:50:22.693" starttime="20190411 13:50:22.192"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:22.693" critical="yes" starttime="20190411 13:50:15.210"></status>
+</test>
+<test id="s1-t5" name="T05 Lecturer Sign In Invalid Username">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${INVALID LECTURER USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:22.693" level="INFO">Typing text 'chitsuthaaa' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:24.282" starttime="20190411 13:50:22.693"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${VALID LECTURER PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:24.282" level="INFO">Typing text 'ABCdef123' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:25.866" starttime="20190411 13:50:24.282"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:25.866" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:27.558" starttime="20190411 13:50:25.866"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:50:29.905" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:50:29.906" starttime="20190411 13:50:29.063"></status>
+</kw>
+<msg timestamp="20190411 13:50:29.906" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:50:29.906" starttime="20190411 13:50:27.559"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:29.906" starttime="20190411 13:50:27.559"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:30.411" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:50:30.411" starttime="20190411 13:50:29.906"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:30.411" critical="yes" starttime="20190411 13:50:22.693"></status>
+</test>
+<test id="s1-t6" name="T06 Lecturer Sign In Invalid Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID LECTURER USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:30.411" level="INFO">Typing text 'chitsutha' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:32.031" starttime="20190411 13:50:30.411"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID LECTURER PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:32.031" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:33.636" starttime="20190411 13:50:32.031"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:33.636" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:35.292" starttime="20190411 13:50:33.636"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:50:37.629" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:50:37.629" starttime="20190411 13:50:36.799"></status>
+</kw>
+<msg timestamp="20190411 13:50:37.629" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:50:37.629" starttime="20190411 13:50:35.293"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:37.629" starttime="20190411 13:50:35.293"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:38.136" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:50:38.136" starttime="20190411 13:50:37.629"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:38.137" critical="yes" starttime="20190411 13:50:30.411"></status>
+</test>
+<test id="s1-t7" name="T07 Lecturer Sign In Invalid Username And Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${INVALID LECTURER USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:38.141" level="INFO">Typing text 'chitsuthaaa' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:39.765" starttime="20190411 13:50:38.140"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID LECTURER PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:39.765" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:41.368" starttime="20190411 13:50:39.765"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:41.368" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:43.071" starttime="20190411 13:50:41.368"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:50:45.413" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:50:45.413" starttime="20190411 13:50:44.578"></status>
+</kw>
+<msg timestamp="20190411 13:50:45.413" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:50:45.413" starttime="20190411 13:50:43.072"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:45.413" starttime="20190411 13:50:43.072"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:45.922" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:50:45.922" starttime="20190411 13:50:45.413"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:50:45.922" critical="yes" starttime="20190411 13:50:38.139"></status>
+</test>
+<test id="s1-t8" name="T08 Lecturer Sign In Invalid Password More 2 Time And Account Is Lock">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID LECTURER USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:45.922" level="INFO">Typing text 'chitsutha' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:47.526" starttime="20190411 13:50:45.922"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID LECTURER PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:47.527" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:49.126" starttime="20190411 13:50:47.527"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:49.126" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:50.766" starttime="20190411 13:50:49.126"></status>
+</kw>
+<kw name="Handle Alert" library="Selenium2Library">
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" endtime="20190411 13:50:52.272" starttime="20190411 13:50:50.767"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID LECTURER USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:52.273" level="INFO">Typing text 'chitsutha' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:50:53.883" starttime="20190411 13:50:52.272"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID LECTURER PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:53.884" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:50:55.490" starttime="20190411 13:50:53.884"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:50:55.490" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:50:57.146" starttime="20190411 13:50:55.490"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN 3TIME MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:50:59.465" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:50:59.465" starttime="20190411 13:50:58.654"></status>
+</kw>
+<msg timestamp="20190411 13:50:59.465" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:50:59.465" starttime="20190411 13:50:57.147"></status>
+</kw>
+<msg timestamp="20190411 13:50:59.465" level="FAIL">Expected error 'Alert with message '*This account is lock!, Please contact support.' present.' but got 'Alert with message '*Invalid Username or Password!' present.'.</msg>
+<status status="FAIL" endtime="20190411 13:50:59.465" starttime="20190411 13:50:57.147"></status>
+</kw>
+<status status="FAIL" endtime="20190411 13:50:59.465" critical="yes" starttime="20190411 13:50:45.922">Expected error 'Alert with message '*This account is lock!, Please contact support.' present.' but got 'Alert with message '*Invalid Username or Password!' present.'.</status>
+</test>
+<test id="s1-t9" name="T09 TA Sign In Empty Username">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:50:59.465" level="INFO">Typing text '' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:01.068" starttime="20190411 13:50:59.465"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${VALID TA PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:01.069" level="INFO">Typing text 'ABCdef123' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:02.687" starttime="20190411 13:51:01.069"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:02.688" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:04.248" starttime="20190411 13:51:02.688"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY USERNAME MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:51:06.552" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:51:06.552" starttime="20190411 13:51:05.756"></status>
+</kw>
+<msg timestamp="20190411 13:51:06.552" level="FAIL">Alert with message '*Please enter your Username!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:51:06.552" starttime="20190411 13:51:04.249"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:06.552" starttime="20190411 13:51:04.248"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:07.063" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:51:07.063" starttime="20190411 13:51:06.552"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:07.064" critical="yes" starttime="20190411 13:50:59.465"></status>
+</test>
+<test id="s1-t10" name="T10 TA Sign In Empty Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID TA USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:07.068" level="INFO">Typing text 'student_ta@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:08.729" starttime="20190411 13:51:07.067"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:08.730" level="INFO">Typing text '' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:10.342" starttime="20190411 13:51:08.729"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:10.344" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:11.930" starttime="20190411 13:51:10.343"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY PASSWORD MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:51:14.323" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:51:14.323" starttime="20190411 13:51:13.441"></status>
+</kw>
+<msg timestamp="20190411 13:51:14.323" level="FAIL">Alert with message '*Please enter your Password!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:51:14.323" starttime="20190411 13:51:11.931"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:14.323" starttime="20190411 13:51:11.931"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:14.842" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:51:14.842" starttime="20190411 13:51:14.323"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:14.842" critical="yes" starttime="20190411 13:51:07.067"></status>
+</test>
+<test id="s1-t11" name="T11 TA Sign In Empty Username And Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:14.842" level="INFO">Typing text '' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:16.398" starttime="20190411 13:51:14.842"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:16.399" level="INFO">Typing text '' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:17.949" starttime="20190411 13:51:16.399"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:17.949" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:19.490" starttime="20190411 13:51:17.949"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY USER AND PASS MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:51:21.815" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:51:21.815" starttime="20190411 13:51:21.012"></status>
+</kw>
+<msg timestamp="20190411 13:51:21.815" level="FAIL">Alert with message '*Please enter your Username and Password!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:51:21.815" starttime="20190411 13:51:19.491"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:21.815" starttime="20190411 13:51:19.491"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:22.317" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:51:22.317" starttime="20190411 13:51:21.815"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:22.317" critical="yes" starttime="20190411 13:51:14.842"></status>
+</test>
+<test id="s1-t12" name="T12 TA Sign In Invalid Username">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${INVALID TA USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:22.317" level="INFO">Typing text 'student_ta@kku' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:23.928" starttime="20190411 13:51:22.317"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${VALID TA PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:23.928" level="INFO">Typing text 'ABCdef123' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:25.494" starttime="20190411 13:51:23.928"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:25.494" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:27.145" starttime="20190411 13:51:25.494"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:51:29.467" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:51:29.467" starttime="20190411 13:51:28.653"></status>
+</kw>
+<msg timestamp="20190411 13:51:29.467" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:51:29.467" starttime="20190411 13:51:27.146"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:29.467" starttime="20190411 13:51:27.146"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:29.968" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:51:29.968" starttime="20190411 13:51:29.467"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:29.968" critical="yes" starttime="20190411 13:51:22.317"></status>
+</test>
+<test id="s1-t13" name="T13 TA Sign In Invalid Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID TA USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:29.968" level="INFO">Typing text 'student_ta@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:31.639" starttime="20190411 13:51:29.968"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID TA PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:31.639" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:33.231" starttime="20190411 13:51:31.639"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:33.231" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:35.548" starttime="20190411 13:51:33.231"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:51:37.889" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:51:37.890" starttime="20190411 13:51:37.056"></status>
+</kw>
+<msg timestamp="20190411 13:51:37.890" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:51:37.890" starttime="20190411 13:51:35.549"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:37.890" starttime="20190411 13:51:35.549"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:38.404" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:51:38.404" starttime="20190411 13:51:37.892"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:38.404" critical="yes" starttime="20190411 13:51:29.968"></status>
+</test>
+<test id="s1-t14" name="T14 TA Sign In Invalid Username And Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${INVALID TA USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:38.404" level="INFO">Typing text 'student_ta@kku' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:40.063" starttime="20190411 13:51:38.404"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID TA PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:40.063" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:41.661" starttime="20190411 13:51:40.063"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:41.661" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:43.307" starttime="20190411 13:51:41.661"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:51:45.646" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:51:45.646" starttime="20190411 13:51:44.815"></status>
+</kw>
+<msg timestamp="20190411 13:51:45.646" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:51:45.646" starttime="20190411 13:51:43.308"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:45.646" starttime="20190411 13:51:43.307"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:46.146" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:51:46.146" starttime="20190411 13:51:45.646"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:51:46.146" critical="yes" starttime="20190411 13:51:38.404"></status>
+</test>
+<test id="s1-t15" name="T15 TA Sign In Invalid Password More 2 Time And Account Is Lock">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID TA USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:46.146" level="INFO">Typing text 'student_ta@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:47.805" starttime="20190411 13:51:46.146"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID TA PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:47.805" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:49.408" starttime="20190411 13:51:47.805"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:49.408" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:51.085" starttime="20190411 13:51:49.408"></status>
+</kw>
+<kw name="Handle Alert" library="Selenium2Library">
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" endtime="20190411 13:51:52.592" starttime="20190411 13:51:51.085"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID TA USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:52.593" level="INFO">Typing text 'student_ta@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:51:54.257" starttime="20190411 13:51:52.593"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID TA PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:54.257" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:51:55.869" starttime="20190411 13:51:54.257"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:51:55.869" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:51:57.506" starttime="20190411 13:51:55.869"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN 3TIME MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:51:59.821" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:51:59.821" starttime="20190411 13:51:59.015"></status>
+</kw>
+<msg timestamp="20190411 13:51:59.821" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:51:59.821" starttime="20190411 13:51:57.507"></status>
+</kw>
+<msg timestamp="20190411 13:51:59.821" level="FAIL">Expected error 'Alert with message '*This account is lock!, Please contact support.' present.' but got 'Alert with message '*Invalid Username or Password!' present.'.</msg>
+<status status="FAIL" endtime="20190411 13:51:59.821" starttime="20190411 13:51:57.507"></status>
+</kw>
+<status status="FAIL" endtime="20190411 13:51:59.821" critical="yes" starttime="20190411 13:51:46.146">Expected error 'Alert with message '*This account is lock!, Please contact support.' present.' but got 'Alert with message '*Invalid Username or Password!' present.'.</status>
+</test>
+<test id="s1-t16" name="T14 Student Sign In Empty Username">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:51:59.821" level="INFO">Typing text '' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:52:01.396" starttime="20190411 13:51:59.821"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${VALID STUDENT PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:01.397" level="INFO">Typing text 'ABCdef123' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:52:03.016" starttime="20190411 13:52:01.397"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:52:03.016" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:52:04.579" starttime="20190411 13:52:03.016"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY USERNAME MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:52:06.914" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:52:06.914" starttime="20190411 13:52:06.089"></status>
+</kw>
+<msg timestamp="20190411 13:52:06.914" level="FAIL">Alert with message '*Please enter your Username!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:52:06.914" starttime="20190411 13:52:04.580"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:06.914" starttime="20190411 13:52:04.580"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:07.414" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:52:07.414" starttime="20190411 13:52:06.914"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:07.414" critical="yes" starttime="20190411 13:51:59.821"></status>
+</test>
+<test id="s1-t17" name="T15 Student Sign In Empty Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID STUDENT USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:07.414" level="INFO">Typing text 'sompong_student@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:52:09.102" starttime="20190411 13:52:07.414"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:09.103" level="INFO">Typing text '' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:52:10.676" starttime="20190411 13:52:09.102"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:52:10.676" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:52:12.236" starttime="20190411 13:52:10.676"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY PASSWORD MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:52:14.538" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:52:14.538" starttime="20190411 13:52:13.745"></status>
+</kw>
+<msg timestamp="20190411 13:52:14.538" level="FAIL">Alert with message '*Please enter your Password!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:52:14.538" starttime="20190411 13:52:12.237"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:14.538" starttime="20190411 13:52:12.237"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:15.054" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:52:15.054" starttime="20190411 13:52:14.538"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:15.054" critical="yes" starttime="20190411 13:52:07.414"></status>
+</test>
+<test id="s1-t18" name="T16 Student Sign In Empty Username And Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:15.054" level="INFO">Typing text '' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:52:16.599" starttime="20190411 13:52:15.054"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:16.600" level="INFO">Typing text '' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:52:18.153" starttime="20190411 13:52:16.599"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:52:18.153" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:52:19.707" starttime="20190411 13:52:18.153"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${EMPTY USER AND PASS MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:52:22.034" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:52:22.034" starttime="20190411 13:52:21.222"></status>
+</kw>
+<msg timestamp="20190411 13:52:22.034" level="FAIL">Alert with message '*Please enter your Username and Password!!' present.</msg>
+<status status="FAIL" endtime="20190411 13:52:22.034" starttime="20190411 13:52:19.708"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:22.034" starttime="20190411 13:52:19.708"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:22.538" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:52:22.538" starttime="20190411 13:52:22.034"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:22.538" critical="yes" starttime="20190411 13:52:15.054"></status>
+</test>
+<test id="s1-t19" name="T17 Student Sign In Invalid Username">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${INVALID STUDENT USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:22.538" level="INFO">Typing text 'sompong_student@kku' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:52:24.157" starttime="20190411 13:52:22.538"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${VALID STUDENT PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:24.157" level="INFO">Typing text 'ABCdef123' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:52:25.734" starttime="20190411 13:52:24.157"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:52:25.734" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:52:27.430" starttime="20190411 13:52:25.734"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:52:29.765" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:52:29.765" starttime="20190411 13:52:28.936"></status>
+</kw>
+<msg timestamp="20190411 13:52:29.765" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:52:29.765" starttime="20190411 13:52:27.431"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:29.765" starttime="20190411 13:52:27.431"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:30.265" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:52:30.265" starttime="20190411 13:52:29.765"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:30.265" critical="yes" starttime="20190411 13:52:22.538"></status>
+</test>
+<test id="s1-t20" name="T18 Student Sign In Invalid Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID STUDENT USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:30.269" level="INFO">Typing text 'sompong_student@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:52:31.972" starttime="20190411 13:52:30.269"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID STUDENT PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:31.972" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:52:33.557" starttime="20190411 13:52:31.972"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:52:33.557" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:52:35.212" starttime="20190411 13:52:33.557"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:52:37.576" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:52:37.576" starttime="20190411 13:52:36.720"></status>
+</kw>
+<msg timestamp="20190411 13:52:37.576" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:52:37.576" starttime="20190411 13:52:35.213"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:37.576" starttime="20190411 13:52:35.212"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INDEX URL}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:38.077" level="INFO">Current location is 'http://10.199.66.227/SoftEn2019/Sec2/Last%20group/'.</msg>
+<status status="PASS" endtime="20190411 13:52:38.077" starttime="20190411 13:52:37.576"></status>
+</kw>
+<status status="PASS" endtime="20190411 13:52:38.077" critical="yes" starttime="20190411 13:52:30.268"></status>
+</test>
+<test id="s1-t21" name="T19 Student Sign In Invalid Username And Password">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${INVALID</arg>
+<arg>USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:38.077" level="FAIL">Keyword 'Selenium2Library.Input Text' expected 2 arguments, got 3.</msg>
+<status status="FAIL" endtime="20190411 13:52:38.077" starttime="20190411 13:52:38.077"></status>
+</kw>
+<status status="FAIL" endtime="20190411 13:52:38.077" critical="yes" starttime="20190411 13:52:38.077">Keyword 'Selenium2Library.Input Text' expected 2 arguments, got 3.</status>
+</test>
+<test id="s1-t22" name="T20 Student Sign In Invalid Password More 2 Time And Account Is Lock">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID STUDENT USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:38.077" level="INFO">Typing text 'sompong_student@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:52:39.783" starttime="20190411 13:52:38.077"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID STUDENT PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:39.783" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:52:41.375" starttime="20190411 13:52:39.783"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:52:41.375" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:52:43.030" starttime="20190411 13:52:41.375"></status>
+</kw>
+<kw name="Handle Alert" library="Selenium2Library">
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" endtime="20190411 13:52:44.537" starttime="20190411 13:52:43.031"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${VALID STUDENT USERNAME}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:44.538" level="INFO">Typing text 'sompong_student@kkumail.com' into text field 'username'.</msg>
+<status status="PASS" endtime="20190411 13:52:46.205" starttime="20190411 13:52:44.538"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${INVALID STUDENT PASSWORD}</arg>
+</arguments>
+<msg timestamp="20190411 13:52:46.205" level="INFO">Typing text 'ABCdef' into text field 'password'.</msg>
+<status status="PASS" endtime="20190411 13:52:47.810" starttime="20190411 13:52:46.205"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>signin</arg>
+</arguments>
+<msg timestamp="20190411 13:52:47.810" level="INFO">Clicking button 'signin'.</msg>
+<status status="PASS" endtime="20190411 13:52:49.507" starttime="20190411 13:52:47.810"></status>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<arguments>
+<arg>Alert with message '${ERROR LOGIN 3TIME MESSAGE}' present.</arg>
+<arg>Alert Should Not Be Present</arg>
+</arguments>
+<kw name="Alert Should Not Be Present" library="Selenium2Library">
+<doc>Verifies that no alert is present.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190411 13:52:51.860" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190411 13:52:51.860" starttime="20190411 13:52:51.017"></status>
+</kw>
+<msg timestamp="20190411 13:52:51.860" level="FAIL">Alert with message '*Invalid Username or Password!' present.</msg>
+<status status="FAIL" endtime="20190411 13:52:51.860" starttime="20190411 13:52:49.509"></status>
+</kw>
+<msg timestamp="20190411 13:52:51.860" level="FAIL">Expected error 'Alert with message '*This account is lock!, Please contact support.' present.' but got 'Alert with message '*Invalid Username or Password!' present.'.</msg>
+<status status="FAIL" endtime="20190411 13:52:51.860" starttime="20190411 13:52:49.508"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190411 13:52:55.553" starttime="20190411 13:52:51.860"></status>
+</kw>
+<status status="FAIL" endtime="20190411 13:52:55.553" critical="yes" starttime="20190411 13:52:38.077">Expected error 'Alert with message '*This account is lock!, Please contact support.' present.' but got 'Alert with message '*Invalid Username or Password!' present.'.</status>
+</test>
+<status status="FAIL" endtime="20190411 13:52:55.553" starttime="20190411 13:49:54.190"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="4" pass="18">Critical Tests</stat>
+<stat fail="4" pass="18">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="4" id="s1" name="UAT-002-SignIn-Fail" pass="18">UAT-002-SignIn-Fail</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
