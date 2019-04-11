@@ -1,4 +1,5 @@
 <?php 
+
 session_start(); 
 function setSessionTime($_timeSecond){
     if(!isset($_SESSION['ses_time_life'])){
@@ -25,11 +26,13 @@ if (!empty($row)) {
     $_SESSION['ses_type'] = $row ['type'];
     $_SESSION['ses_memberId'] = $row ['memberId'];
 
+
     // เข้าสู่ระบบสำเร็จ 
         header( "location: ../Views/ClassList.php" );
             exit(0);   
     // กรณี username และ password ไม่ตรงกัน
         } else {
+
             echo "<script>";
                     echo "alert(\"Invalid Username or Password!\");"; 
                     echo "window.history.back()";
