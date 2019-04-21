@@ -49,6 +49,11 @@ if (!empty($row)) {
         if($row["loginCount"] +1 >= $LimitTime){
             $stmt = $pdo->prepare("UPDATE member SET flagLock = 'Yes', banExpire = DATE_ADD(NOW(),INTERVAL $BanTime MINUTE) WHERE username = '$username' ");
             $stmt->execute();
+            echo "<script>";
+            echo "alert(\"*This account is Lock!, Please contact support.\");"; 
+            echo "window.history.back()";
+            echo "</script>";
+            exit();   
         }
         echo "<script>";
         echo "alert(\"*Invalid Username or Password!\");"; 
