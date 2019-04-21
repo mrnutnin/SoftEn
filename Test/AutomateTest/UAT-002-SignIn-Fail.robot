@@ -222,13 +222,6 @@ T20 User Sign In Invalid Password 3 Time Then Account Is Lock
   Input Text    password    ${INVALID TA2 PASSWORD}
   Click Button    signin
   Run Keyword And Expect Error
-    ...    Alert with message '${ERROR LOGIN MESSAGE}' present.
-    ...    Alert Should Not Be Present
-  Location Should Be    ${INDEX URL}
-  Input Text    username    ${VALID TA2 USERNAME}
-  Input Text    password    ${INVALID TA2 PASSWORD}
-  Click Button    signin
-  Run Keyword And Expect Error
     ...    Alert with message '${ERROR LOGIN 3TIME MESSAGE}' present.
     ...    Alert Should Not Be Present
   Location Should Be    ${INDEX URL}
