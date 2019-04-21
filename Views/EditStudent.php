@@ -15,7 +15,7 @@ while($detail=$result->fetch_assoc() ){
   <div class="form-group"><h3>แก้ไขนักศึกษา</h3><hr class="my-4"></div>
   <div class="form-group">
     <label for="exampleFormControlInput1">รหัสนักศึกษา</label>
-     <input type="text" class="form-control" id="sId" name="sId" value="<?=$studentId?>" required pattern="[0-9]{10}" title="รหัสนักศึกษาไม่มีขีด ตัวอย่าง 5930204112 ">
+     <input type="text" class="form-control" id="sId" name="sId" value="<?=$studentId?>" required pattern="[0-9]{9}-[0-9]{1}" title="Ex. 593020804-3">
      <input type="hidden" id="cId" name="cId" value = <?= $classId?>>
      <input type="hidden" id="oldSid" name="oldSid" value = <?= $studentId?>>
      

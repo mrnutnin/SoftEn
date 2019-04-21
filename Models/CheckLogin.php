@@ -70,8 +70,17 @@ if (!empty($row)) {
     $_SESSION['ses_type'] = $row ['type'];
     $_SESSION['ses_memberId'] = $row ['memberId'];
     session_write_close();
-    header( "location: ../Views/ClassList.php" );
-    exit();   
+    if($_SESSION['ses_type'] != 'student'){
+        header( "location: ../Views/ClassList.php" );
+        exit(0); 
+    }else{
+        header( "location: ../Views/ClassListForStudent.php" );
+        exit(0); 
+    }
+        
+
+  //  header( "location: ../Views/ClassList.php" );
+   // exit();   
     }
    
  

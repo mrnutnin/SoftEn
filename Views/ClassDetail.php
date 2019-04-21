@@ -11,6 +11,7 @@ while($detailclass=$result->fetch_assoc() ){
  
 
 ?>
+
 <title>เพิ่มนักศึกษา</title>
 <div style="position:relative; padding-top:10%;padding-left:10%;padding-right:10%">
 <div class="jumbotron">
@@ -21,7 +22,7 @@ while($detailclass=$result->fetch_assoc() ){
      <div class="form-row col-md-1"><form action="EditClass.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-success mb-2">แก้ไข</button></form><div class="form-group ">
     </div>
     </div>
-     <div class="form-row col-md-1"><form action="../Models/DeleteClassFromDB.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-danger mb-2">ลบ</button></form><div class="form-group ">
+     <div class="form-row col-md-1"><form action="../Models/DeleteClassFromDB.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-danger mb-2" onclick="return confirm('Are you sure?!'); ">ลบ</button></form><div class="form-group ">
     </div>
   </div>
   
@@ -63,7 +64,7 @@ while($detailclass=$result->fetch_assoc() ){
   <hr class="my-4">
   <div class="form-group">
     <label for="exampleFormControlInput1">รหัสนักศึกษา</label>
-     <input type="text" class="form-control" name="sId" required pattern="[0-9]{10}">
+     <input type="text" class="form-control" name="sId" required pattern="[0-9]{9}-[0-9]{1}" title="Ex. 593020804-3">
      <input type="hidden" name="cId" value = <?= $classId?>>
      
   </div>
@@ -76,16 +77,9 @@ while($detailclass=$result->fetch_assoc() ){
   </form>
 </div>
 
-<form method="POST" action="../Models/excelUpload.php" enctype="multipart/form-data">
-<div class="form-group">
-<label>Upload Excel File</label>
-<input type="file" name="file" class="form-control">
-</div>
-<div class="form-group">
-<button type="submit" name="Submit" class="btn btn-success">Upload</button>
-</div>
-<p>Download Demo File from here : <a href="demo.ods">Demo.ods</a></p>
-</form>
+<?php
+  include '../PHPExcel/insertExcelStudentslist.php';
+?>
 
  
 <div class="jumbotron">
@@ -115,22 +109,32 @@ while($detailclass=$result->fetch_assoc() ){
 						<td style="text-align:center;background-color:#F8F8FF;color:#000000"><b><?=$count++?></b></td>
 						<td style="text-align:center;background-color:#F8F8FF;color:#000000"><b><?= $list_student["sId"];?></b></td>
             <td style="text-align:center;background-color:#F8F8FF;color:#000000"><?= $list_student["sName"];?></td>
-            <td style="background-color:#F8F8FF;color:#000000"><div class="form-row"><div class="form-group col-md-6" style="text-align:right;"><form action="EditStudent.php">
-            <input type="hidden" name="cId" value="<?=$classId?>">
-            <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
-              <button type="submit" class="btn btn-success mb-2">แก้ไข</button></form></div>
+            <td style="background-color:#F8F8FF;color:#000000"><div class="form-row">
+              <div class="form-group col-md-6" style="text-align:right;">
+              <form action="EditStudent.php">
+                <input type="hidden" name="cId" value="<?=$classId?>">
+                <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
+                <button type="submit" class="btn btn-success mb-2">แก้ไข</button>
+                </form>
+              </div>
               
-              <div class="form-group col-md-6" style="text-align:left"><form action="../Models/DeleteStudentFromDB.php">
-            <input type="hidden" name="cId" value="<?=$classId?>">
-            <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
-              <button type="submit" class="btn btn-danger mb-2" >ลบ</button></form></div></div></td>
+              <div class="form-group col-md-6" style="text-align:left">
+              <form action="../Models/DeleteStudentFromDB.php" onclick="return confirm('Are you sure?!');">
+                <input type="hidden" name="cId" value="<?=$classId?>">
+                <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
+                <button type="submit" class="btn btn-danger mb-2" >ลบ</button>
+              </form>
+              </div>
+         
+   </td>
 
 				
 					
-					  </tr>
-            <?php
+					</tr>
+  <?php
   }
   ?>
-</div></div>
+</div>
+</div>
 
 <?php include '../Components/Footer.php';?>

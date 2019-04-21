@@ -28,8 +28,14 @@ if (!empty($row)) {
 
 
     // เข้าสู่ระบบสำเร็จ 
+    if($_SESSION['ses_type'] != 'student'){
         header( "location: ../Views/ClassList.php" );
-            exit(0);   
+        exit(0); 
+    }else{
+        header( "location: ../Views/ClassListForStudent.php" );
+        exit(0); 
+    }
+        
     // กรณี username และ password ไม่ตรงกัน
         } else {
 
