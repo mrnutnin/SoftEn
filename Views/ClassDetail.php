@@ -19,7 +19,7 @@ while($detailclass=$result->fetch_assoc() ){
     <div class="form-group col-md-10">
     <label for="exampleFormControlInput1" class="lead"><h3>ข้อมูลชั้นเรียน</h3> </label>
     </div>
-     <div class="form-row col-md-1"><form action="EditClass.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-info">แก้ไข</button></form><div class="form-group ">
+     <div class="form-row col-md-1"><form action="EditClass.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-info" name="editclass">แก้ไข</button></form><div class="form-group ">
     </div>
     </div>
      <div class="form-row col-md-1"><form action="../Models/DeleteClassFromDB.php"><input type="hidden" name="cId" value="<?=$classId?>"><button type="submit" class="btn btn-danger mb-2" onclick="return confirm('Are you sure?!'); ">ลบ</button></form><div class="form-group ">
@@ -73,7 +73,7 @@ while($detailclass=$result->fetch_assoc() ){
      <input type="text" class="form-control" name="sName" required>
   </div>
   
-  <button type="submit" class="btn btn-primary mb-2">ยืนยัน</button>
+  <button type="submit" name="addStudent" class="btn btn-primary mb-2">ยืนยัน</button>
   </form>
 </div>
 
@@ -95,7 +95,7 @@ while($detailclass=$result->fetch_assoc() ){
       <th style="text-align:center;" scope="col">ชื่อ-สกุล</th>
       <th style="text-align:center;" scope="col">สถานะ</th>
       <th style="text-align:center;" scope="col">แก้ไข/ลบ</th>
-
+      
     </tr>
   </thead>
   <tr >
@@ -106,33 +106,47 @@ while($detailclass=$result->fetch_assoc() ){
     while($list_student=$result_list_student->fetch_assoc() ){
     if($list_student["status"]=='normal'){
       $status = '<button type="button" class="btn btn-success">ปกติ</button>';
+    }
+    else if($list_student["status"]=='move'){
+      $status = '<button type="button" class="btn btn-warning">ย้าย</button>';
+    }else if($list_student["status"]=='retire'){
+      $status = '<button type="button" class="btn">ตกออก</button>';
     }else{
-      $status = '<button type="button" class="btn btn-warning">ถอน</button>';
+      $status = '<button type="button" class="btn btn-danger">ถอน</button>';
     }
 
 ?>             
-
 						<td style="text-align:center;background-color:#F8F8FF;color:#000000"><b><?=$count++?></b></td>
 						<td style="text-align:center;background-color:#F8F8FF;color:#000000"><b><?= $list_student["sId"];?></b></td>
             <td style="text-align:center;background-color:#F8F8FF;color:#000000"><?= $list_student["sName"];?></td>
             <td style="text-align:center;background-color:#F8F8FF;color:#000000"><?= $status;?></td>
-            <td style="background-color:#F8F8FF;color:#000000"><div class="form-row">
-              <div class="form-group col-md-6" style="text-align:right;">
+            <td style="background-color:#F8F8FF;color:#000000">
+            <div class="form-row" style="">
+         
               <form action="EditStudent.php">
                 <input type="hidden" name="cId" value="<?=$classId?>">
                 <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
-                <button type="submit" class="btn btn-info">แก้ไข</button>
+                <button type="submit" name="edit" class="btn btn-info">แก้ไข</button>
                 </form>
-              </div>
+      
               
-              <div class="form-group col-md-6" style="text-align:left">
+             
               <form action="../Models/DeleteStudentFromDB.php" onclick="return confirm('Are you sure?!');">
                 <input type="hidden" name="cId" value="<?=$classId?>">
                 <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
-                <button type="submit" class="btn btn-danger mb-2" >ลบ</button>
+                <button type="submit" name="delete" class="btn btn-danger mb-2" >ลบ</button>
               </form>
+
+              
+              <form action="EditSecStudent.php">
+                <input type="hidden" name="cId" value="<?=$classId?>">
+                <input type="hidden" name="sId" value="<?= $list_student["sId"];?>">
+                <button type="submit" name="move" class="btn btn-warning mb-2" >ย้าย</button>
+              </form>
+        
               </div>
-         
+
+              
    </td>
 
 				

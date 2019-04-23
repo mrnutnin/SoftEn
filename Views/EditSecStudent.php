@@ -24,25 +24,31 @@ while($detail=$result->fetch_assoc() ){
     <label for="exampleFormControlInput1">ชื่อนักศึกษา</label>
      <input type="text" class="form-control" name="sName" value="<?=$detail['sName']?>" required >
   </div>
-  
-  สถานะ : 
-  <?php
-  if($detail['status']=='drop'){
-    $status = 'ถอน';
-  }else{
-    $status = 'ปกติ';
-  }
+<?php  
+$strSQL2 = "SELECT * FROM classrooms WHERE cid = $classId";
+$result2=$connect->query($strSQL2);
+$detail2=$result2->fetch_assoc();
+$sCode= $detail2['subjectCode'];
+$t= $detail2['term'];
+$y= $detail2['year'];
+$strSQL1 = "SELECT * FROM classrooms WHERE subjectCode = $sCode  AND year=$y AND term = $t";
+$result1=$connect->query($strSQL1);
+
+?>
+  กลุ่มการเรียน
+  <input type="hidden" class="form-control" name="status" value="move" >
+  <select name="newSec" class="form-control">
+  <?php while($detail1=$result1->fetch_assoc() ){?>
+  <option value="<?=$detail1['cId']?>" ><?=$detail1['section']?></option>
+  <?php }
   ?>
-  
-  <select name="status">
-  <option value="<?=$detail['status']?>"><?=$status?></option>
-  <option value="normal">ปกติ</option>
-  <option value="drop">ถอน</option>
-  <option value="retire">ตกออก</option>
+
+
   </select>
   <br><br>
+ 
 
-  <button type="submit"  class="btn btn-primary mb-2">ยืนยัน</button>
+  <button type="submit" class="btn btn-primary mb-2">ยืนยัน</button>
   </form>
 </div>
 <?php

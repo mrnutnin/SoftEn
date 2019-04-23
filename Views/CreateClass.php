@@ -6,7 +6,7 @@
 <form action="../Models/CreateClass2DB.php" >
   <div class="form-group">
     <label for="exampleFormControlInput1">ชื่อวิชา</label>
-     <input type="text" class="form-control" name="subjectName" id="subjectName" required>
+     <input type="text" class="form-control" name="subjectName" id="subjectName" required pattern="[A-Za-zก-ฮ0-9]{1,50}" title="ไม่สามารถใส่สัญลักษณ์พิเศษได้">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">รหัสวิชา</label>
@@ -24,7 +24,6 @@
     include '../Controllers/Connect.php';
     $strSQL = 'SELECT * FROM member WHERE type ="lecturer" '  ;
                         $result=$connect->query($strSQL);
-
                                     while($objResult=$result->fetch_assoc() ){
                                    
                                   ?>
@@ -53,7 +52,7 @@
     </select>
   </div>
   </div>
-  <button type="submit" class="btn btn-primary mb-2">ยืนยัน</button> 
+  <button type="submit" name="create" class="btn btn-primary mb-2">ยืนยัน</button> 
 
 </form></div></div>
 <?php include '../Components/Footer.php';?>

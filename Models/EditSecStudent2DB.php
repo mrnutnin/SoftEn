@@ -10,6 +10,14 @@ $stmt = $pdo->prepare("UPDATE `students` SET `sId`=?,`sName`=?,`status`=? WHERE 
 	
         $stmt->execute(); 
         $cId=$_GET["cId"];
+$stmt1 = $pdo->prepare("INSERT INTO `students`(`sId`, `sName`, `status`, `cId`) VALUES (?,?,?,?)");
+        $stmt1->bindParam(1, $_GET["sId"]);
+        $stmt1->bindParam(2, $_GET["sName"]);
+        $stmt1->bindParam(3, 'normal');
+        $stmt1->bindParam(4, $_GET["newSec"]);
+	
+        $stmt1->execute(); 
+        
         header("location:../Views/ClassDetail.php?cId=$cId");
 
 ?>

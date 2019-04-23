@@ -35,7 +35,7 @@ ${DELAY}    0.5
   Click Button    signin
   Location Should Contain    ${HOME URL}
   Wait Until Page Contains    ${HOME TITLE}
-   Wait Until Page Contains    ${LECTURER LOGIN SUCCESS MESSAGE}
+  Wait Until Page Contains    ${LECTURER LOGIN SUCCESS MESSAGE}
   [Teardown]    Close Browser
   
 T02 TA Sign in Success

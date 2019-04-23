@@ -21,7 +21,7 @@ $strSQL = "SELECT * FROM classrooms WHERE cId  = $classId "  ;
 <form action="../Models/EditClass2DB.php" >
   <div class="form-group">
     <label for="exampleFormControlInput1">ชื่อวิชา</label>
-     <input type="text" class="form-control" name="subjectName" id="subjectName" value="<?php echo $obj["subjectName"];?>"required>
+     <input type="text" class="form-control" name="subjectName" id="subjectName" value="<?php echo $obj["subjectName"];?>" pattern="[A-Za-zก-ฮ0-9]{1,50}" required title="ไม่สามารถใส่สัญลักษณ์พิเศษได้">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">รหัสวิชา</label>
@@ -75,7 +75,7 @@ $strSQL = 'SELECT * FROM member WHERE type ="lecturer" '  ;
                       
                     }
 					  ?>
-  <button type="submit" class="btn btn-primary mb-2">ยืนยัน</button> 
+  <button type="submit" class="btn btn-primary mb-2" name="editClass">ยืนยัน</button> 
 
 </form>
 </div></div>

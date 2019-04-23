@@ -40,17 +40,23 @@ if(isset($_POST["import"]))
 }
 ?>
 
-  <div class="container box">
+  <div class="jumbotron">
    <h3>อัพโหลดรายชื่อนักศึกษา</h3><br />
+  
    <form method="post" enctype="multipart/form-data">
     <label>Select Excel File</label>
     <input type="file" name="excel" />
     <br />
-    <input type="submit" name="import" class="btn btn-info" value="Upload" />
+    <input type="submit" name="import" id="fileToUpload" class="btn btn-info" value="Upload" />
+    <a href="../library/คู่มือการUpload.pdf" download>คู่มือการอัพโหลด</a>
    </form>
-   <br />
-   <br />
+ 
    <?php
    echo $output;
    ?>
+   <br />
+ 
+ 
+   </div>
+   
   
