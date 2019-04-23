@@ -7,6 +7,7 @@ ${BROWSER}        Chrome
 ${INDEX URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/
 ${LOGIN URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/Models/CheckLoginh.php
 ${HOME URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/Views/ClassList.php
+${HOME STUDENT URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/Views/ClassListForStudent.php
 ${VALID LECTURER USERNAME}    chitsutha
 ${VALID LECTURER PASSWORD}    ABCdef123
 ${VALID TA USERNAME}    student_ta@kkumail.com
@@ -22,7 +23,7 @@ ${INVALID STUDENT PASSWORD}    ABCdef
 ${HOME TITLE}    Class List
 ${TA LOGIN SUCCESS MESSAGE}    Hello " TA " Welcome Back !
 ${LECTURER LOGIN SUCCESS MESSAGE}    Hello " chitsutha " Welcome Back !
-${STUDENT LOGIN SUCCESS MESSAGE}    Hello " sompong " Welcome Back !
+${STUDENT LOGIN SUCCESS MESSAGE}    Hello " นายภูริณัฐ นิลละออง " Welcome Back !
 ${DELAY}    0.5
 
 *** Test Cases ***
@@ -57,7 +58,7 @@ T03 Student Sign in Success
   Input Text    username    ${VALID STUDENT USERNAME}
   Input Text    password    ${VALID STUDENT PASSWORD}
   Click Button    signin
-  Location Should Contain    ${HOME URL}
+  Location Should Contain    ${HOME STUDENT URL}
   Wait Until Page Contains    ${HOME TITLE}
   Wait Until Page Contains    ${STUDENT LOGIN SUCCESS MESSAGE}
   [Teardown]    Close Browser

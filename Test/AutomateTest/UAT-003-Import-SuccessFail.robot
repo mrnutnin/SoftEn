@@ -10,7 +10,7 @@ ${LOGIN URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/Models/CheckLoginh
 ${HOME URL}    http://${SERVER}/SoftEn2019/Sec2/Last%20group/Views/ClassList.php
 ${ALERT SUCCESS}    Insert File Succes
 ${ALERT FAIL}    Invalid File
-${DELAY}    0.5
+${DELAY}    1
 ${VALID TA USERNAME}    student_ta@kkumail.com
 ${VALID TA PASSWORD}    ABCdef123
 ${HOME TITLE}    Class List
