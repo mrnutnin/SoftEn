@@ -23,7 +23,7 @@ if(isset($_POST["import"]))
     $output .= "<tr>";
     $sId = mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(0, $row)->getValue());
     $sName = mysqli_real_escape_string($connect, $worksheet->getCellByColumnAndRow(1, $row)->getValue());
-    $cId = $classId;;
+    $cId = $classId;
     $query = "INSERT INTO students (sId, sName,cId) VALUES ('".$sId."', '".$sName."' , '".$cId."')";
     mysqli_query($connect, $query);
     

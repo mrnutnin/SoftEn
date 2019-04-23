@@ -29,11 +29,12 @@
 			<center>
 			<div id="demo">
 			<h2>Class List</h2><br>
-			<p>Hello " <?=$_SESSION["ses_name"] ?> " Welcome Back !  </p><br>
+			<span>Hello " <?=$_SESSION["ses_name"] ?> " Welcome Back !  </span> , You are <button type="button" class="btn btn-primary btn-xs "><?=$_SESSION["ses_type"] ?></button> <br><br>
 							
-				<?php include "../Models/ClassListFromDB.php"?>
+			<?php include "../Models/ClassListFromDB.php"?>
 						
 			</center>
+			
 			</div>
 		</div>
 </div>

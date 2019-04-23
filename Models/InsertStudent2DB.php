@@ -11,7 +11,7 @@ include '../Controllers/Connect.php';
 // header("location:insert-student.php");
 $stmt = $pdo->prepare("INSERT INTO `students`(`sId`, `sName`, `cId`) VALUES (?,?,?)");
         $stmt->bindParam(1, $_GET["sId"]);
-		$stmt->bindParam(2, $_GET["sName"]);
+        $stmt->bindParam(2, $_GET["sName"]);
 		$stmt->bindParam(3, $_GET["cId"]);
         $stmt->execute(); 
         $cId = $_GET["cId"];

@@ -25,6 +25,12 @@ while($detail=$result->fetch_assoc() ){
      <input type="text" class="form-control" name="sName" value="<?=$detail['sName']?>" required >
   </div>
   
+  สถานะ : 
+  <select>
+  <option name="status" value="normal">ปกติ</option>
+  <option name="status" value="drop">ถอน</option>
+  </select><br><br>
+
   <button type="submit" class="btn btn-primary mb-2">ยืนยัน</button>
   </form>
 </div>
