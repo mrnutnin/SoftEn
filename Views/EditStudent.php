@@ -42,7 +42,7 @@ while($detail=$result->fetch_assoc() ){
   </select>
   <br><br>
 
-  <button type="submit"  class="btn btn-primary mb-2">ยืนยัน</button>
+  <button type="submit" name = "submit" class="btn btn-primary mb-2">ยืนยัน</button>
   </form>
 </div>
 <?php

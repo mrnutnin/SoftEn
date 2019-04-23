@@ -18,7 +18,6 @@ ${HOME TITLE}    Class List
 ${TA LOGIN SUCCESS MESSAGE}    Hello " TA " Welcome Back !
 
 *** Test Cases ***
-
 T01 Insert Student Success
   Open Browser    ${INDEX URL}    ${BROWSER}
   Maximize Browser Window
@@ -54,6 +53,5 @@ T02 Insert Student Fail
   Input Text    sName    ภูริณัฐ นิลละออง  
   Click Button    addStudent
   Wait Until Page Does Not Contain    5930208043
-  Wait Until Page Does Not Contain    ภูริณัฐ นิลละออง
   [Teardown]    Close Browser
 
