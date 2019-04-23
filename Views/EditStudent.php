@@ -29,8 +29,10 @@ while($detail=$result->fetch_assoc() ){
   <?php
   if($detail['status']=='drop'){
     $status = 'ถอน';
-  }else{
+  }else if($detail['status']=='normal'){
     $status = 'ปกติ';
+  }else{
+    $status = 'ย้าย';
   }
   ?>
   
